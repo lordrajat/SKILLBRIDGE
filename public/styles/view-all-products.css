@@ -1,0 +1,204 @@
+/*
+*
+* view-all-products.css
+*
+*/
+
+.listings-container {
+  width: 75%;
+  max-width: 1200px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  margin-bottom: 50px;
+}
+
+.listings-heading-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listings-title {
+  font-size: 2em;
+  color: #495579;
+  font-weight: 300;
+  border-bottom: solid 2px #495579;
+  padding: 3px;
+}
+
+.listings-view-all {
+  font-size: 1em;
+  color: #495579;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.listings-view-all:hover {
+  border-bottom: 1px solid #495579;
+}
+
+.listings-cards-container {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+
+}
+
+.listing-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: white;
+}
+
+.listing-card-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.title-price-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.listing-card-title {
+  color: black;
+  font-weight: 600;
+}
+
+.listing-card-price {
+  color: black;
+}
+
+.listing-card-view {
+  border: #495579 2px solid;
+  background-color: white;
+  padding: 3px;
+  border-radius: 15px;
+  width: 25%;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.listing-card-view:hover {
+  color:#FFFBEB;
+  background-color: #495579;
+}
+
+.favourite-button {
+  background-color: white;
+  border: none;
+
+}
+
+.favourite-icon {
+  width: 30px;
+  fill: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+.favourite-icon:hover {
+  fill: rgb(251, 103, 103);
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color:#495579;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+
+  .hero-banner {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-text-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    width: 100%;
+    padding-left: 0px;
+    text-align: center;
+  }
+
+  .hero-image {
+    padding-right: 0px;
+    margin-top: 15px;
+  }
+
+  .category-cards-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .category-card {
+    width: 75%;
+    margin-bottom: 15px;
+  }
+
+  .listings-cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .listing-card-view {
+    width: 40%;
+  }
+}

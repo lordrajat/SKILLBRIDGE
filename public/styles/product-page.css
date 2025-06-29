@@ -1,0 +1,132 @@
+/*
+*
+* product-page.css
+*
+*/
+
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+  max-width: 1000px;
+  height: 500px;
+  justify-content: space-between;
+  margin-Top: 100px;
+}
+
+.product-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 50px;
+  width: 50%;
+  height: 100%;
+}
+
+.price {
+  font-size: 1.2em;
+}
+
+.product-title {
+  color: #495579;
+  font-weight: 600;
+  font-size: 2em;
+}
+
+.price-user-container {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: auto;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.vl {
+  border-left: 2px solid #d4d4d4;
+  height: 15px;
+}
+
+.checked {
+  color: rgb(247, 201, 35);
+}
+
+.description-text {
+  margin-top: 20px;
+  font-size: 1em;
+  color: rgb(164, 164, 164);
+  align-self: center;
+}
+
+.unchecked {
+  color: rgb(163, 163, 163);
+}
+
+.availability-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 60%;
+}
+
+.green-check {
+  color: rgb(72, 196, 72);
+  height: 25px;
+  margin-right: 10px;
+}
+
+.red-check {
+  color: rgb(255, 74, 74);
+  height: 25px;
+  margin-right: 10px;
+}
+
+.product-image {
+  height: 400px;
+  border-radius: 15px;
+}
+
+textarea {
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 12px 20px;
+}
+
+.message-submission-button {
+  width: 100%;
+  background-color: #495579;
+  color: #FFFBEB;
+  font-weight: 600;
+  font-size: 1em;
+  padding: 10px 5px;
+  border: none;
+  border-radius: 10px;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.message-submission-button:hover {
+  background-color: black;
+}
+
+.submission-confirmation-toast {
+  width: 400px;
+  height: 50px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border: 2px solid black;
+  bottom: 0;
+  top: 75px;
+  background-color: rgb(249, 249, 249);
+  border-radius: 5px;
+  color: #495579;
+  font-weight: 600;
+  font-size: 1em;
+}
+

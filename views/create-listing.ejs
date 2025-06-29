@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Create Listing</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <!--  Main-layout-override.css -->
+  <link rel="stylesheet" href="/styles/main-layout-override.css" />
+  <!-- index.css -->
+  <link rel="stylesheet" href="/styles/index.css">
+  <!-- Layout.css -->
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <!-- navigation.css -->
+  <link rel="stylesheet" href="/styles/navigation.css">
+  <!-- footer.css -->
+  <link rel="stylesheet" href="/styles/footer.css">
+  <!-- create-listing.css -->
+  <link rel="stylesheet" href="/styles/create-listing.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+</head>
+
+<body>
+  <!-- Navigation partial view -->
+  <%- include('partials/_navigation') %>
+
+  <h1 class="create-listing-title">Create a listing</h1>
+  <form name="make-post"class="create-listing" action="/create/new" method="POST">
+    <div class="form-title">
+      <label for="title">Title</label>
+      <div>
+        <input class="form-control" type="title" name="title" placeholder="title" />
+      </div>
+    </div>
+    <div class="form-description">
+      <label for="description">Description</label>
+      <div>
+        <input class="description-form-control" type="description" name="description" placeholder="description" />
+      </div>
+    </div>
+    <div class="form-price">
+      <label for="price">Price</label>
+      <div>
+        <input class="form-control" type="price" name="price" placeholder="price" />
+      </div>
+    </div>
+    <div class="form-image">
+      <label for="img">Image URL</label>
+      <div>
+        <input class="form-control" type="img" name="img" placeholder="URL" />
+      </div>
+    </div>
+    <button type="submit" class="btn-primary">Create</button>
+  </form>
+   <!-- Footer partial view -->
+   <%- include('partials/_footer') %>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Buy and Sell</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <!--  Main-layout-override.css -->
+  <link rel="stylesheet" href="/styles/main-layout-override.css" />
+  <!--  product-page.css -->
+  <link rel="stylesheet" href="/styles/product-page.css" />
+  <!-- Layout.css -->
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <!-- navigation.css -->
+  <link rel="stylesheet" href="/styles/navigation.css">
+  <!-- footer.css -->
+  <link rel="stylesheet" href="/styles/footer.css">
+
+  <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+</head>
+
+<body>
+  <!-- Navigation partial view -->
+  <%- include('partials/_navigation') %>
+
+  <% for (let listing of listings) { %>
+  <section class="main-container">
+    <div class="product-info-container">
+      <h1 class="product-title"><%=  listing.listing_title %></h1>
+      <div class="price-user-container">
+        <h2 class="price">$<%=  listing.dollars %>.00</h2>
+        <div class="vl"></div>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star unchecked"></span>
+      </div>
+      <p class="description-text">
+        <%=  listing.listing_description %>
+      </p>
+      <div class="availability-container">
+
+        <!-- Reply to message modal -->
+       <% if( listings[0].sold_status === false){ %>
+        <svg class="green-check" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <p class="description-text">
+          Product Available
+        </p>
+      <% } else{ %>
+        <svg class="red-check" fill="red" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        <p class="description-text">
+          Product Unavailable
+        </p>
+      <% } %>
+
+      </div>
+      <form class="message-container" method="POST" action="/messages/1">
+        <p class="description-text">Send a message to the seller</p>
+        <textarea name="message" id="" cols="30" rows="5"></textarea>
+        <button type="submit" id="submission-button" class="message-submission-button">Submit Message</button>
+      </form>
+
+    </div>
+    <div>
+      <img class="product-image"src="<%=  listing.image_url %>" alt="">
+    </div>
+  </section>
+  <% } %>
+
+  <div id="submission-toast" class="submission-confirmation-toast">
+    <p class="">📧 Your message was sent to the seller! 📧</p>
+  </div>
+
+  <!-- Footer partial view -->
+  <%- include('partials/_footer') %>
+
+  <script>
+
+    let submissionButton = document.getElementById("submission-button");
+    let submissionToast = document.getElementById("submission-toast");
+
+    submissionButton.onclick = function() {
+      submissionToast.style.display = "flex";
+    }
+
+  </script>
+</body>
+
+</html>

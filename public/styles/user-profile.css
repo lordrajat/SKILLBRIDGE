@@ -1,0 +1,130 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer-container {
+  margin-top: auto;
+}
+
+.favourites-container {
+  width: 75%;
+  max-width: 1200px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+  margin-bottom: 50px;
+}
+
+.user-favourites-title {
+  font-size: 40px;
+  font-weight: 750;
+  color: #495579;
+  display: flex;
+  width: 100%;
+  border-top-width: 40px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.favourites-grid-container {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.favourites-card-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+
+
+/* .favourites-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: white;
+} */
+
+.favourites-card-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.messages-title {
+  font-size: 40px;
+  font-weight: 750;
+  color: #495579;
+  display: flex;
+  width: 100%;
+  border-top-width: 40px;
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+.messages-container {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-reply-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border: 2px solid #495579;
+  padding: 10px;
+  border-radius: 15px;
+
+}
+
+.test-user {
+  color: #495579;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 1%;
+}
+
+.button {
+  background-color: #495579;
+  width: 15%;
+  border: none;
+  color: #FFFBEB;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  margin-top: 1%;
+  cursor: pointer;
+  border-radius: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.favourites-card-remove {
+  border: red 2px solid;
+  background-color: rgb(255, 255, 255);
+  color: red;
+  padding: 3px;
+  margin-top: 10px;
+  border-radius: 15px;
+  width: 25%;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.favourites-card-remove:hover {
+  color:#FFFBEB;
+  background-color: #ff0808;
+}

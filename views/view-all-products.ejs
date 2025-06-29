@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Buy and Sell</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <!--  Main-layout-override.css -->
+  <link rel="stylesheet" href="/styles/main-layout-override.css" />
+  <!-- view-all-products.css -->
+  <link rel="stylesheet" href="/styles/view-all-products.css">
+  <!-- index.css -->
+  <link rel="stylesheet" href="/styles/index.css">
+  <!-- Layout.css -->
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <!-- navigation.css -->
+  <link rel="stylesheet" href="/styles/navigation.css">
+  <!-- footer.css -->
+  <link rel="stylesheet" href="/styles/footer.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+</head>
+
+<body>
+  <!-- Navigation partial view -->
+  <%- include('partials/_navigation') %>
+
+  <!-- Popular Products Section -->
+  <section class="listings-container">
+
+    <div class="listings-heading-container">
+      <h3 class="listings-title">All Products</h3>
+      <div class="dropdown">
+        <button class="dropbtn">Filter Price</button>
+        <div class="dropdown-content">
+          <a href="/view-all-products/lowest">Lowest Price</a>
+          <a href="/view-all-products/highest">Highest Price</a>
+        </div>
+      </div>
+    </div>
+    <!-- Listings grid -->
+    <div class="listings-cards-container">
+      <!-- First Row -->
+      <% for (let listing of listings) { %>
+      <div class="listing-card">
+        <img class="listing-card-image"src="<%=  listing.image_url %>" alt="">
+        <div class="title-price-container">
+          <h4 class="listing-card-title"><%=  listing.listing_title %></h4>
+          <p class="listing-card-price">$<%=  listing.dollars %>.00</p>
+        </div>
+        <div class="view-favourite-container">
+          <a href="/listing/<%=  listing.id %>" class="listing-card-view">View</a>
+          <form action="/listing/<%=  listing.id %>/favourite" method="POST">
+          <button type="submit" class="favourite-button">
+            <svg id="favourite-icon-1" class="favourite-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+          </button>
+        </form>
+        </div>
+      </div>
+      <% } %>
+      <!-- End Card -->
+    </div>
+  </section>
+
+  <!-- Footer partial view -->
+  <%- include('partials/_footer') %>
+
+  <script>
+
+    let favouriteIcon = $('.favourite-icon');
+
+    favouriteIcon.click(function() {
+      favouriteIcon.css('fill', 'rgb(180, 180, 180)');
+      favouriteIcon.css('border', 'none');
+      $(this).css('fill', 'rgb(255, 93, 93)');
+      $(this).css('border-radius', '25px');
+      $(this).css('border', '2px solid rgb(255, 93, 93)');
+      console.log("Favourited!");
+    });
+
+  </script>
+</body>
+
+</html>

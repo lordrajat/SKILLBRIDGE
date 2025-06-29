@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Buy and Sell</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <!--  Main-layout-override.css -->
+  <link rel="stylesheet" href="/styles/main-layout-override.css" />
+  <!-- admin.css -->
+  <link rel="stylesheet" href="/styles/admin.css">
+  <!-- index.css -->
+  <link rel="stylesheet" href="/styles/index.css">
+  <!-- navigation.css -->
+  <link rel="stylesheet" href="/styles/navigation.css">
+  <!-- footer.css -->
+  <link rel="stylesheet" href="/styles/footer.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+</head>
+
+<body>
+
+  <!-- Navigation partial view -->
+  <%- include('partials/_navigation') %>
+
+  <!-- Admin Welcome Banner -->
+  <section class="admin-heading-container">
+    <h1 class="admin-welcome-banner">Welcome, Kash 👋</h1>
+  </section>
+
+
+
+  <!-- Create listing -->
+  <Section class="create-listing-container">
+    <div class="new-listing">
+      <h3 class="new-listing-label">Create New Listing</h3>
+      <a class="button" href="/create">Create Listing</a>
+    </div>
+  </Section>
+
+  <Section class="create-listing-container">
+    <div class="new-listing">
+      <h3 class="new-listing-label">Go to Messages</h3>
+      <a class="button" href="/messages/1/">Messages</a>
+    </div>
+  </Section>
+
+
+  <!-- Manage Existing Listings -->
+  <div class="admin-heading-container">
+    <h3 class="new-listing-label">Manage Your Listings</h3>
+  </div>
+  <section class="manage-listings-container">
+    <!-- Manage Listing Cards -->
+    <% for (let listing of listings) { %>
+    <div class="listing-card">
+      <img class="listing-card-image"src="<%=  listing.image_url %>" alt="Chair">
+      <div class="title-price-container">
+        <h4 class="listing-card-title"><%=  listing.listing_title %></h4>
+      </div>
+      <div class="forms-container">
+        <form class="listing-sold-form" action="/admin/<%=  listing.id %>/sold" method="POST">
+          <button class="admin-button" id="sold-button" type="submit">Mark As Sold</button>
+        </form>
+        <form class="delete-form" action="/admin/<%=  listing.id %>/delete">
+          <button class="admin-button-delete" id="delete-button" type="submit">Delete</button>
+        </form>
+     </div>
+    </div>
+    <% } %>
+    <!-- End Manage Listing Card -->
+  </section>
+
+  <!-- <div id="deleted-toast" class="submission-confirmation-toast">
+    <p class="">🗑 Listing Deleted 🗑</p>
+  </div>
+
+  <div id="sold-toast" class="submission-confirmation-toast">
+    <p class="">🗑 Listing Marked As Sold 🗑</p>
+  </div> -->
+
+
+
+  <!-- Footer partial view -->
+  <%- include('partials/_footer') %>
+
+  <script>
+    let replyModal = document.getElementById("reply-modal")
+    let replyButton = document.getElementById("reply-button");
+    let replyCancel = document.getElementById("reply-cancel");
+    let replyTextArea = document.getElementById("reply-text-area");
+
+    //Open reply modal when user click reply button
+    replyButton.onclick = function() {
+      replyModal.style.display = "block";
+    };
+
+    //Close reply modal when user clicks the cancel button
+    replyCancel.onclick = function() {
+      replyTextArea.value = "";
+      replyModal.style.display = "none";
+    };
+
+    //Close reply modal if user clicks anywhere outside the modal
+    window.onclick = function(event) {
+      if (event.target == replyModal) {
+        replyTextArea.value = "";
+        replyModal.style.display = "none";
+      };
+    }
+
+
+    let deleteButton = document.getElementById("delete-button");
+    let deleteToast = document.getElementById("deleted-toast");
+
+    deleteButton.onclick = function() {
+      deleteToast.style.display = "flex";
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>

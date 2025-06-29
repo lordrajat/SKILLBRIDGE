@@ -1,0 +1,65 @@
+/*
+Create listing css styling
+*/
+
+.create-listing-title {
+  font-size: xxx-large;
+  color: #495579;
+  display: flex;
+  width: 100%;
+  border-top-width: 40px;
+  padding-top: 40px;
+  padding-left: 40px;
+}
+
+.create-listing {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  padding-top: 40px;
+  font-size: x-large;
+  padding-bottom: 40px;
+}
+
+.form-control {
+  width: 50%;
+}
+
+.form-description {
+  padding-top: 25px;
+}
+
+.description-form-control {
+  width: 50%;
+  height: 100px;
+}
+
+.form-price {
+  padding-top: 25px;
+}
+
+.form-image {
+  padding-top: 25px;
+  padding-bottom: 40px;
+}
+
+.btn-primary {
+  width: 5%;
+  background-color: #5a658a;
+  color: white;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  font-weight: 400;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer-container {
+  margin-top: auto;
+}

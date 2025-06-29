@@ -1,0 +1,238 @@
+/*
+*
+* admin.css
+*
+*/
+
+.admin-heading-container {
+  margin-top: 25px;
+  width: 75%;
+  max-width: 1200;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25px;
+
+}
+
+.admin-welcome-banner {
+  width: 75%;
+  max-width: 1200px;
+  color: #495579;
+  font-size: 2em;
+}
+
+.create-listing-container {
+  margin-top: 25px;
+  width: 75%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.new-listing {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #495579;
+  padding-bottom: 5px;
+}
+
+.new-listing-label {
+  width: 75%;
+  max-width: 1200px;
+  color: #495579;
+  font-size: 1.3em;
+}
+
+.button {
+  background-color: #495579;
+  border: none;
+  color: #FFFBEB;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: black;
+}
+
+.admin-button {
+  background-color: white;
+  border: 2px solid #495579;
+  color: #495579;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.admin-button-delete {
+  background-color: white;
+  border: 2px solid rgb(253, 77, 77);
+  color: rgb(253, 77, 77);
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.admin-button-delete:hover {
+  background-color: red;
+  color: white;
+}
+
+.admin-button:hover {
+  background-color: #495579;
+  color:white;
+}
+
+.forms-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.manage-listings-container {
+  margin-top: 25px;
+  width: 75%;
+  height: auto;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+  margin-bottom: 75px;
+}
+
+.manage-listing-sold, .manage-listing-delete {
+  border: #495579 2px solid;
+  background-color: white;
+  padding: 3px;
+  margin-top: 10px;
+  border-radius: 15px;
+  width: auto;
+  font-size: 1em;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.manage-listing-sold:hover {
+  background-color: #495579;
+  color: #FFFBEB;
+}
+
+.manage-listing-delete:hover {
+  background-color: rgb(247, 102, 102);
+  color: #FFFBEB;
+}
+
+.admin-messages-container {
+  width: 75%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 50px;
+}
+
+.message-component {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border: 2px solid #495579;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.message-details {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.title {
+  color: rgb(162, 162, 162);
+  font-size: .8em;
+  margin-bottom: 5px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.user {
+  color: #495579;
+  font-weight: 600;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.modal-container {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 75%; /* Could be more or less, depending on screen size */
+  border-radius: 10px;
+  animation-name: animatetop;
+  animation-duration: 0.3s;
+}
+
+.reply-modal-message {
+  color: #495579;
+  font-weight: 600;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+

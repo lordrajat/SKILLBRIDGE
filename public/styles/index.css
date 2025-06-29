@@ -1,0 +1,276 @@
+/*
+*
+* hero-banner.css
+*
+*/
+
+.hero-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30%;
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.hero-text-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #495579;
+  font-size: 3.2em;
+  width: 75%;
+  padding-left: 25px;
+  line-height: 120%;
+}
+
+.hero-image {
+  width: 40%;
+  padding-right: 25px;
+}
+
+.hero-search-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #495579;
+  border: none;
+  color: #FFFBEB;
+  padding: 20px 15px;
+  text-decoration: none;
+  margin: 4px 2px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 55%;
+  margin-top: -20px;
+}
+
+.hero-search-input {
+  background-color: #495579;
+  border: none;
+  color: #FFFBEB;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1.2em;
+  width: 80%;
+  outline: none;
+  margin-left: 10px;
+}
+
+.hero-search-icon {
+  width: 22px;
+  height: 22px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #FFFBEB;
+  opacity: .5; /* Firefox */
+}
+
+/*
+*
+* Categories section
+*
+*/
+
+.categories-container, .listings-container {
+  width: 75%;
+  max-width: 1200px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.categories-heading-container, .listings-heading-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categories-title, .listings-title {
+  font-size: 2em;
+  color: #495579;
+  font-weight: 300;
+  border-bottom: solid 2px #495579;
+  padding: 3px;
+}
+
+.categories-view-all, .listings-view-all {
+  font-size: 1em;
+  color: #495579;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.categories-view-all:hover, .listings-view-all:hover {
+  border-bottom: 1px solid #495579;
+}
+
+.category-cards-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.category-card {
+  width: 30%;
+  position: relative;
+}
+
+.category-image {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.category-card-pill {
+  background: #495579;
+  color: #FFFBEB;
+  font-weight: 600;
+  padding: 5px;
+  width: 50%;
+  text-align: center;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.listings-cards-container {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+
+}
+
+.listing-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: white;
+}
+
+.listing-card-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.title-price-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.listing-card-title {
+  color: black;
+  font-weight: 600;
+}
+
+.listing-card-price {
+  color: black;
+}
+
+.listing-card-view {
+  border: #495579 2px solid;
+  color: #495579;
+  background-color: white;
+  text-align: center;
+  padding: 3px;
+  border-radius: 15px;
+  width: 25%;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.listing-card-view:hover {
+  color:#FFFBEB;
+  background-color: #495579;
+}
+
+.view-favourite-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 8px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.favourite-button {
+  background-color: white;
+  border: none;
+
+}
+
+.favourite-icon {
+  width: 30px;
+  fill: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+.favourite-icon:hover {
+  fill: rgb(251, 103, 103);
+}
+
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+
+  .hero-banner {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-text-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    width: 100%;
+    padding-left: 0px;
+    text-align: center;
+  }
+
+  .hero-image {
+    padding-right: 0px;
+    margin-top: 15px;
+  }
+
+  .category-cards-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .category-card {
+    width: 75%;
+    margin-bottom: 15px;
+  }
+
+  .listings-cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .listing-card-view {
+    width: 40%;
+  }
+}
+

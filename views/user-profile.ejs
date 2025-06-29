@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>User Profile</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <!--  Main-layout-override.css -->
+  <link rel="stylesheet" href="/styles/main-layout-override.css" />
+  <!-- admin.css -->
+  <link rel="stylesheet" href="/styles/admin.css">
+  <!-- index.css -->
+  <link rel="stylesheet" href="/styles/index.css">
+  <!-- navigation.css -->
+  <link rel="stylesheet" href="/styles/navigation.css">
+  <!-- footer.css -->
+  <link rel="stylesheet" href="/styles/footer.css">
+  <!-- user-profile.css -->
+  <link rel="stylesheet" href="/styles/user-profile.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+</head>
+
+<body>
+
+  <!-- Navigation partial view -->
+  <%- include('partials/_navigation') %>
+
+  <!-- Admin Welcome Banner -->
+  <section class="admin-heading-container">
+    <h1 class="admin-welcome-banner">Welcome, Ethan 👋</h1>
+  </section>
+
+     <!-- Create listing -->
+
+     <Section class="create-listing-container">
+      <div class="new-listing">
+        <h3 class="new-listing-label">Go to Messages</h3>
+        <a class="button" href="/messages/2/">Messages</a>
+      </div>
+    </Section>
+
+ <!-- User Favourites Section -->
+  <section class="favourites-container">
+    <h1 class="user-favourites-title">Your Favourites</h1>
+
+    <% if( favourites.length < 1 ){ %>
+      <p class="new-listing-label">Sorry, you currently don'y have any favourites. Go favourite something!</p>
+    <% } %>
+
+     <!-- favourites grid view -->
+     <div class="favourites-grid-container">
+      <% for (let favourite of favourites) { %>
+
+        <div class="favourites-card">
+          <img class="favourites-card-image" src="<%=  favourite.image_url %>">
+          <div class="title-price-container">
+            <h3 class="favourites-card-title"><%=  favourite.listing_title %></h3>
+            <p class="favourites-card-price"><%=  favourite.price %></p>
+          </div>
+          <div class="forms-container">
+            <a href="/listing/<%=  favourite.id %>" class="admin-button">View</a>
+            <form action="/profile/<%= favourite.favourites_id %>/delete" method="POST">
+              <button type='submit' class="admin-button-delete">Remove</button>
+            </form>
+          </div>
+
+       </div>
+    <% } %>
+
+  </section>
+
+
+
+
+
+  <!-- Footer partial view -->
+  <%- include('partials/_footer') %>
+
+
+
+</body>
+
+</html>
